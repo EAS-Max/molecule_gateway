@@ -15,7 +15,7 @@
 # #     msg: var=hostvars['gateway']
 
 # # - name: debug hostvars
-# #   debug: var=hostvars['sing-max-gateway'].ansible_host
+# #   debug: var=hostvars['max-gateway'].ansible_host
 # # - name: echo gateway into network scripts
 # #   commands: echo "GATEWAY=192.168.4.196" >> /etc/sysconfig/network-scripts/ifcfg-ens224
 # # - name: delete annoying file
@@ -48,7 +48,7 @@
       NETMASK=255.255.255.0
       IPADDR=10.0.0.1
       PEERDNS=yes
-      GATEWAY={{ hostvars['sing-max-gateway'].ansible_host }}
+      GATEWAY={{ hostvars['max-gateway'].ansible_host }}
 
     insertafter: EOF
     create: yes
@@ -69,7 +69,7 @@
     block: |
       NETWORKING=yes
       HOSTNAME=nat
-      GATEWAY={{ hostvars['sing-max-gateway'].ansible_host }}
+      GATEWAY={{ hostvars['max-gateway'].ansible_host }}
 
     insertafter: EOF
     create: yes
@@ -80,7 +80,7 @@
 # #   content: |
 # #     NETWORKING=yes
 # #     HOSTNAME=nat
-# #     GATEWAY={{ hostvars['sing-max-gateway'].ansible_host }}
+# #     GATEWAY={{ hostvars['max-gateway'].ansible_host }}
 # #   dest: /etc/sysconfig/network
 # #--------------------------------------------------------------------------------------------------
 

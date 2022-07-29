@@ -1,4 +1,4 @@
-- hosts: sing-max-gateway
+- hosts: max-gateway
   tasks:
     - name: gateway tasks
       include_tasks: tasks/main.yml
